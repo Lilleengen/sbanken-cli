@@ -6,7 +6,14 @@ import requests
 
 from requests.auth import HTTPBasicAuth
 
-config = json.load(open(os.path.dirname(os.path.realpath(__file__)) + '/config.json'))
+config = dict()
+
+try:
+    config = json.load(open(os.path.dirname(os.path.realpath(__file__)) + '/config.json'))
+except OSError as e:
+    print('config.json not found in script-dir')
+    exit(1)
+
 
 token_request = requests.post('https://api.sbanken.no/identityserver/connect/token', {'grant_type': 'client_credentials'}, auth=HTTPBasicAuth(config['clientId'], config['secret']))
 
