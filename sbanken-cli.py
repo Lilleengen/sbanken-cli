@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
+import os
 import json
 import requests
 
 from requests.auth import HTTPBasicAuth
 
-config = json.load(open('config.json'))
+config = json.load(open(os.path.dirname(os.path.realpath(__file__)) + '/config.json'))
 
 token_request = requests.post('https://api.sbanken.no/identityserver/connect/token', {'grant_type': 'client_credentials'}, auth=HTTPBasicAuth(config['clientId'], config['secret']))
 
