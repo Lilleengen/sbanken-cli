@@ -2,7 +2,7 @@
 A Python 3 command line client for checking your account balance at [Sbanken](https://sbanken.no/).
 
 ## Advice
-As this is accessing your bank account, you shuld __allways read the code before running it__. If you don't understand it, __do not run it!__
+As this is accessing your bank account, you shuld __always read the code before running it__. If you don't understand it, __do not run it!__
 
 ## Usage
 ```bash
