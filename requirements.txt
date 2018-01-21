@@ -1,1 +1,1 @@
-requirements.txt
+requests==2.18.4
